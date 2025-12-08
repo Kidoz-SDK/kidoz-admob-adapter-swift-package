@@ -3,7 +3,7 @@
     {
       "identity" : "kidozsdk-swift-package",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Kidoz-SDK/kidozsdk-swift-package.git",
+      "location" : "https://github.com/Kidoz-SDK/core-sdk-swift-package.git",
       "state" : {
         "revision" : "2f245e042b8d37b5778aa35e6a8682becdb6b9fd",
         "version" : "10.1.3"
