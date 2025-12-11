@@ -9,18 +9,18 @@ let package = Package(
     products: [
         .library(
             name: "KidozAdmobAdapter",
-            targets: ["KidozAdmobAdapterWrapper"]
+            targets: ["KidozAdmobAdapterTarget"]
         )
     ],
     dependencies: [
         // Dependency on core SDK
-        .package(url: "https://github.com/Kidoz-SDK/core-sdk-swift-package.git", from: "10.1.3")
+        .package(url: "https://github.com/Kidoz-SDK/kidoz-sdk-swift-package.git", from: "10.1.3")
     ],
     targets: [
         .target(
-            name: "KidozAdmobAdapterWrapper",
+            name: "KidozAdmobAdapterTarget",
             dependencies: [
-                .product(name: "KidozSDK", package: "core-sdk-swift-package"),
+                .product(name: "KidozSDK", package: "kidoz-sdk-swift-package"),
                 "KidozAdmobAdapter"
             ]
         ),
