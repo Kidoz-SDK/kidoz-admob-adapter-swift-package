@@ -9,7 +9,7 @@ let package = Package(
     products: [
         .library(
             name: "KidozAdmobAdapter",
-            targets: ["KidozAdmobAdapter"]
+            targets: ["KidozAdmobAdapterWrapper"]
         )
     ],
     dependencies: [
@@ -17,9 +17,16 @@ let package = Package(
         .package(url: "https://github.com/Kidoz-SDK/core-sdk-swift-package.git", from: "10.1.3")
     ],
     targets: [
+        .target(
+            name: "KidozAdmobAdapterWrapper",
+            dependencies: [
+                .product(name: "KidozSDK", package: "core-sdk-swift-package"),
+                "KidozAdmobAdapter"
+            ]
+        ),
         .binaryTarget(
             name: "KidozAdmobAdapter",
-            path: "XCFramework/KidozAdmobAdapter.xcframework"
+            path: "XCFramework/KidozAdmobAdapter.xcframework",
         )
     ]
 )
