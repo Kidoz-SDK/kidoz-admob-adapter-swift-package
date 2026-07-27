@@ -13,15 +13,14 @@ let package = Package(
         )
     ],
     dependencies: [
-            .package(url: "https://github.com/Kidoz-SDK/kidoz-sdk-swift-package.git", from: "10.1.5")
-        ],
+        .package(url: "https://github.com/Kidoz-SDK/kidoz-sdk-swift-package.git", from: "10.1.5")
+    ],
     targets: [
-        
         .target(
-            name: KidozAdmobAdapterTarget,
+            name: "KidozAdmobAdapterTarget",
             dependencies: [
-                .product(name: KidozAdmobAdapter, package: kidoz-sdk-swift-package),
-                KidozAdmobAdapter
+                .product(name: "KidozSDK", package: "kidoz-sdk-swift-package"),
+                "KidozAdmobAdapter"
             ]
         ),
         .binaryTarget(
