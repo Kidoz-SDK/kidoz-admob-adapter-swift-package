@@ -4,7 +4,7 @@ import PackageDescription
 let package = Package(
     name: "KidozAdmobAdapter",
     platforms: [
-        .iOS(.v12) // or your minimum supported version
+        .iOS(.v14)
     ],
     products: [
         .library(
@@ -13,21 +13,21 @@ let package = Package(
         )
     ],
     dependencies: [
-        // Dependency on core SDK
-        .package(url: "https://github.com/Kidoz-SDK/kidoz-sdk-swift-package.git", from: "10.1.3")
-    ],
+            .package(url: "https://github.com/Kidoz-SDK/kidoz-sdk-swift-package.git", from: "10.1.5")
+        ],
     targets: [
+        
         .target(
-            name: "KidozAdmobAdapterTarget",
+            name: KidozAdmobAdapterTarget,
             dependencies: [
-                .product(name: "KidozSDK", package: "kidoz-sdk-swift-package"),
-                "KidozAdmobAdapter"
+                .product(name: KidozAdmobAdapter, package: kidoz-sdk-swift-package),
+                KidozAdmobAdapter
             ]
         ),
         .binaryTarget(
             name: "KidozAdmobAdapter",
-            path: "XCFramework/KidozAdmobAdapter.xcframework"
+            url: "https://github.com/Kidoz-SDK/kidoz-ios-frameworks/raw/refs/heads/main/mediation/admob/2.0.1/KidozAdmobAdapter.zip",
+            checksum: "d47904efd3bd3d0610542aee22618cac7dd39008c53a60b140ac0666e15a6016"
         )
     ]
 )
-
