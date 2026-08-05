@@ -13,13 +13,15 @@ let package = Package(
         )
     ],
     dependencies: [
-        .package(url: "https://github.com/Kidoz-SDK/kidoz-sdk-swift-package.git", from: "10.1.5")
+        .package(url: "https://github.com/Kidoz-SDK/kidoz-sdk-swift-package.git", from: "10.1.5"),
+        .package(url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git", "12.0.0"..<"14.0.0")
     ],
     targets: [
         .target(
             name: "KidozAdmobAdapterTarget",
             dependencies: [
                 .product(name: "KidozSDK", package: "kidoz-sdk-swift-package"),
+                .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads"),
                 "KidozAdmobAdapter"
             ]
         ),
